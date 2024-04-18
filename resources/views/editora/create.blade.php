@@ -13,40 +13,31 @@
                 legend {color: black;}
              </style>
 
-                <p class="btn btn-outline-primary"><a href="">Listar todos os sócios </a></p> 
-                <p class="btn btn-outline-primary"><a href="">Lista dos meus sócios</a></p>
-                <p>teste</p>
+                <p class="btn btn-outline-primary"><a href="">Listar todas as editoras </a></p> 
 
                 <div class="card-body">
              
-                <form action="" method="post">
+                <form action="{{route('editora.store')}}" method="post">
                 @csrf  
                 
                 <fieldset>
-                   
            
                     <div>
-
                         <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
-                        <!-- o "value="{{Auth::user()->id}}"" aqui vai permitir que seja apresentado o codigo do user neste preenchimento. É algo automático e não é colocado manualmente -->
-                        <!-- "type="hiddgen"" permite esconder o preenchimento, ou seja, o comando todo continua a funcionar mas fica escondido -->
                     </div>
                     <div>
                         <label for="nome">Nome</label>
                         <input class="form-control mb-2" type="text" name="nome" id="nome" 
                         required autofocus>
-                        <!-- "required" não permite que o campo fique vazio. É obrigatorio o preenchimento-->
-                        <!-- "autofocus" faz com que o cursor já esteja dentro do campo de preenchimento, sem necessitar de clicar la -->
                     </div>
+
+
                     <div>
                         <label for="morada">Morada</label>
                         <input class="form-control mb-2" type="text" name="morada" id="morada" 
                         required autofocus>
                     </div>
-                    <div>
-                        <label for="CC">Cartão de Cidadão</label>
-                        <input class="form-control mb-2" type="text" name="CC" id="CC" 
-                        required autofocus>
+
                     <div>
                         <label for="codPostal">Código Postal</label>
                         <input class="form-control mb-2" type="text" name="cod_postal" id="cod_postal" 
@@ -62,7 +53,11 @@
                         <input class="form-control mb-2" type="text" name="telefone" id="telefone" 
                         required autofocus>
                     </div>
-                    <!-- "class="form-control mb-2" este comando permite dar espaço entre as linhas -->
+                    <div>
+                        <label for="CC">Cartão de Cidadão</label>
+                        <input class="form-control mb-2" type="text" name="CC" id="CC" 
+                        required autofocus>
+                    </div>
                  
                     
                     <!-- Acrescentar botoes para gravar ou limpar -->
