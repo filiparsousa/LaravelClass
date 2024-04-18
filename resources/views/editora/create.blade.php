@@ -15,6 +15,7 @@
 
                 <p class="btn btn-outline-primary"><a href="">Listar todos os sócios </a></p> 
                 <p class="btn btn-outline-primary"><a href="">Lista dos meus sócios</a></p>
+                <p>teste</p>
 
                 <div class="card-body">
              
