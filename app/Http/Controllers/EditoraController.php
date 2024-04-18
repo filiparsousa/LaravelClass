@@ -10,7 +10,7 @@ class EditoraController extends Controller
     // é utilizado para mostrar uma lista de editoras
     public function index()
     {
-        return view('editora.index', ['editora' => Editora::orderby('nome')->paginate(10)]);
+        return view('editoras.index', ['editoras' => Editora::orderby('nome')->paginate(10)]);
     }
 
     //mostra um formulário para criar uma nova editora.
@@ -25,13 +25,12 @@ class EditoraController extends Controller
         $editora=new Editora();
         //cada campo do formulario vai corresponder a cada campo da tabela 
         //colocar pela mesma sequência da tabela 
-        $editora->user_id     =$request->user_id;
-         $editora->nome       =$request->nome;
-         $editora->CC         =$request->CC;
-         $editora->morada     =$request->morada;
-         $editora->cod_postal =$request->cod_postal;
-         $editora->localidade =$request->localidade;
-         $editora->telefone   =$request->telefone;
+         $editora->id           =$request->user_id;
+         $editora->nome         =$request->nome;
+         $editora->morada       =$request->morada;    
+         $editora->cod_postal   =$request->cod_postal;
+         $editora->telefone     =$request->telefone;
+         $editora->contibuinte  =$request->contribuinte;
 
          $editora->save();
         //  comando que vai gravar a instrução dada para gravar 
@@ -42,20 +41,20 @@ class EditoraController extends Controller
    // mostra uma editora específica.
     public function show(Editora $editora)
     {
-        return view ('editora.show', ['editora'=>$editora]) ;
+        return view ('editoras.show', ['editora'=>$editora]) ;
     }
 
     // mostra um formulário para editar uma editora específica.
-    public function edit($id)
+    public function edit(Editora $editora)
     {
-        return view ('socios.edit',['socio'=>Editora::find($id)]);
+        return view ('editoras.edit',['editora'=>$editora]);
     }
 
     //atualiza uma editora existente na base de dados.
     public function update(Request $request, Editora $editora)
     {
         Editora::findOrFail($editora->id)->update($request->all());
-        return redirect()->route('socio.index', $editora->id);
+        return redirect()->route('editora.index', $editora->id);
     }
 
     // remove uma editora da base de dados.
@@ -63,7 +62,11 @@ class EditoraController extends Controller
     {
         //return 'Foi eliminado o sócio '.$socio->nome;
         Editora::findOrFail($editora->id)->delete();
-        return redirect()->route('socio.index');
-        
+        return redirect()->route('editora.index'); 
+    }
+
+    public function confirma_delete_editora (Editora $id)
+    {   
+        return view('editoras.confirma_delete_editora', ['id' => $id]);
     }
 }

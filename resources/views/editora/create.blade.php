@@ -5,47 +5,41 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Lista de Editoras</div>
-               
-             <style>
-                body {background-color:lightslategray;}
-                label {color: black;}
-                legend {color: black;}
-             </style>
+                <div class="card-header" style= background-color:lightslategray;>Criar Editoras</div>
+             
+                @if (session('msg'))
+                        <p class="btn btn-info">
+                            {{
+                                session('msg')
+                            }}
+                            </p>
+                        @endif
 
-                <p class="btn btn-outline-primary"><a href="">Listar todas as editoras </a></p> 
+                <p class="btn btn-outline-primary"><a href="">Lista de todas as Editoras </a></p> 
+
 
                 <div class="card-body">
-             
                 <form action="{{route('editora.store')}}" method="post">
                 @csrf  
                 
                 <fieldset>
            
                     <div>
-                        <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
+                        <input class="form-control mb-2" type="hidden" name="editora_id" id="editora_id">
                     </div>
                     <div>
                         <label for="nome">Nome</label>
                         <input class="form-control mb-2" type="text" name="nome" id="nome" 
                         required autofocus>
                     </div>
-
-
                     <div>
                         <label for="morada">Morada</label>
                         <input class="form-control mb-2" type="text" name="morada" id="morada" 
                         required autofocus>
                     </div>
-
                     <div>
                         <label for="codPostal">Código Postal</label>
                         <input class="form-control mb-2" type="text" name="cod_postal" id="cod_postal" 
-                        required autofocus>
-                    </div>
-                    <div>
-                        <label for="localidade">Localidade</label>
-                        <input class="form-control mb-2" type="text" name="localidade" id="localidade" 
                         required autofocus>
                     </div>
                     <div>
@@ -54,8 +48,8 @@
                         required autofocus>
                     </div>
                     <div>
-                        <label for="CC">Cartão de Cidadão</label>
-                        <input class="form-control mb-2" type="text" name="CC" id="CC" 
+                        <label for="contribuinte">Contribuinte</label>
+                        <input class="form-control mb-2" type="text" name="contribuinte" id="contribuinte" 
                         required autofocus>
                     </div>
                  

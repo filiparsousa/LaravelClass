@@ -12,6 +12,8 @@ class Editora extends Model
     protected $fillable=[
         
         'nome',
+        'morada',
+        'cod_postal',
         'telefone',
         'contribuinte'
     ];

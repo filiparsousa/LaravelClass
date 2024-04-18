@@ -34,30 +34,19 @@ Route::middleware('auth')->group(function () {
   // rota para os sócios 
    Route:: resources([
     // prefixo para aceder às rotas 
-    'socio'=>SocioController::class
-    //vai criar as rotas para o index, edit, update e delete
-  ]);
-  
+    'socio'=>SocioController::class,
+    'editora'=>EditoraController::class
+]);
 
   // rota para os socios de um utilizador
   Route::get('/socios_user/{id}', [SocioController::class,'socios_user'])->name('socios.user');
 
- // Route::get('socios/socio/{id}', [SocioController::class,'socios'])->name('socios.show');
-
-// Rota para a pagina de confirmação de eliminação de socios
+ // Rota para a pagina de confirmação de eliminação de socios
   Route::get('/confirma_delete/{id}', [SocioController::class, 'confirma_delete'])->name('socio.confirma_delete');
   
+ //rota para a pagina de confirmção de eliminação das editoras
+ Route:: get ('confirma_delete_editora/{id}',[EditoraController::class,'confirma_delete_editora'])->name('editora.confirma_delete_editora');
 
-   // rota para as editoras 
-   Route:: resources([
-    // prefixo para aceder às rotas 
-    'editora'=>EditoraController::class
-  ]);
-
-  Route::get('/editora_user/{id}', [SocioController::class,'editora_user'])->name('editora.user');
-
-
-// Route::get('users_index');
 });
 
 require __DIR__.'/auth.php';

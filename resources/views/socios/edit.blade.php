@@ -45,7 +45,7 @@
                         required autofocus>
                     <div>
                         <label for="cod_postal">Código Postal</label>
-                        <input class="form-control mb-2" type="text" name="cod_postal" id="codPostal" value="{{ old('cod_ostal', $socio->cod_postal) }}"
+                        <input class="form-control mb-2" type="text" name="cod_postal" id="cod_postal" value="{{ old('cod_postal', $socio->cod_postal) }}"
                         required autofocus>
                     </div>
                     <div>
