@@ -10,13 +10,13 @@ class EditoraController extends Controller
     // é utilizado para mostrar uma lista de editoras
     public function index()
     {
-        return view('editoras.index', ['editoras' => Editora::orderby('nome')->paginate(10)]);
+        return view('editoras.index', ['editoras' => Editora::orderby('nome')->paginate(20)]);
     }
 
     //mostra um formulário para criar uma nova editora.
     public function create()
     {
-        return view('editora.create');
+        return view('editoras.create');
     }
 
     //guarda uma nova editora na base de dados.
@@ -25,12 +25,11 @@ class EditoraController extends Controller
         $editora=new Editora();
         //cada campo do formulario vai corresponder a cada campo da tabela 
         //colocar pela mesma sequência da tabela 
-         $editora->id           =$request->user_id;
+         $editora->id           =$request->id;
          $editora->nome         =$request->nome;
          $editora->morada       =$request->morada;    
-         $editora->cod_postal   =$request->cod_postal;
          $editora->telefone     =$request->telefone;
-         $editora->contibuinte  =$request->contribuinte;
+         $editora->contribuinte  =$request->contribuinte;
 
          $editora->save();
         //  comando que vai gravar a instrução dada para gravar 
@@ -54,7 +53,7 @@ class EditoraController extends Controller
     public function update(Request $request, Editora $editora)
     {
         Editora::findOrFail($editora->id)->update($request->all());
-        return redirect()->route('editora.index', $editora->id);
+        return redirect()->route('editora.show', $editora->id);
     }
 
     // remove uma editora da base de dados.

@@ -5,11 +5,16 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Ficha da Editora <strong>{{$editora->nome}}</strong></div>
+                <div class="card-header">Ficha da Editora <strong>{{$editora->nome}}</strong><a href="{{route('editora.index')}}"></div>
  
-                <style>
-                     body {background-color:lightslategray;}
-                </style>
+            <style>
+            body {
+                background-image: url('{{ asset('imagens/flower.jpg') }}');
+                background-repeat: no-repeat;
+                background-size: 100%; 
+                background-position:center-bottom;
+                }
+            </style>
 
  <div class="card-body">
 
@@ -17,7 +22,7 @@
         <tbody>
         <tr>
                 <td>ID</td>
-                <td>{{ $editora->user_id }}</td>
+                <td>{{ $editora->id }}</td>
             </tr>
             <tr>
                 <td>Name</td>
@@ -27,10 +32,7 @@
                 <td>Morada</td>
                 <td>{{ $editora->morada }}</td>
             </tr>
-            <tr>
-                <td>Código Postal</td>
-                <td>{{ $editora->cod_postal }}</td>
-            </tr>
+
             <tr>
                 <td>Telefone</td>
                 <td>{{ $editora->telefone}}</td>
@@ -41,7 +43,7 @@
             </tr>
             </tbody>
     </table>
-            <a href="{{ url()->previous() }}" class="btn btn-primary"> Voltar </a>    
+            <a href= "{{route('editora.index')}}" class="btn btn-primary"> Voltar </a>    
             <a href="{{route('editora.edit',$editora->id)}}" class="btn btn-primary"> Editar </a>
             <a href="{{route('editora.confirma_delete_editora',$editora->id)}}" class="btn btn-primary"> Apagar </a>
             </tbody>

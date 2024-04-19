@@ -6,7 +6,16 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">{{ __('Confirmar Eliminação da Editora') }}</div>
-
+               
+            <style>
+            body {
+                background-image: url('{{ asset('imagens/flower.jpg') }}');
+                background-repeat: no-repeat;
+                background-size: 100%; 
+                background-position:center-bottom;
+                }
+            </style>
+            
                 <div class="card-body">
                  
                 <p>Confirma a Eliminação desta editora <strong>{{$id->nome}}</strong>?</p>
@@ -20,7 +29,7 @@
                 
                 <button type="submit">Eliminar Definitivamente </button>
 
-                <a href="{{route('socio.show', $id->id)}}"> Voltar</a>
+                <a href="{{route('editora.show', $id->id)}}"> Voltar</a>
                 </form>
 
                 </div>

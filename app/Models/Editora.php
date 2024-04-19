@@ -13,7 +13,6 @@ class Editora extends Model
         
         'nome',
         'morada',
-        'cod_postal',
         'telefone',
         'contribuinte'
     ];

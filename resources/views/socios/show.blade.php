@@ -11,11 +11,14 @@
                 <div class="card-body">
                     
                 <style>
-                        body {background-color:lightslategray;}
-                        .socio-table {
-                            border-collapse: collapse;
-                            width: 100%;
-                        }
+                        
+                        body {
+                            background-image: url('{{ asset('imagens/flower.jpg') }}');
+                            background-repeat: no-repeat;
+                            background-size: 100%; 
+                            background-position:center-bottom;
+                            }
+                       
 
                         .socio-table td,.socio-table th {
                             border: 1px solid #ddd;

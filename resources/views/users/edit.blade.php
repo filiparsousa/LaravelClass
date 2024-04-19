@@ -8,6 +8,15 @@
                 <div class="card-header">Edição do utilizador {{$user->name}}</div>
 
                 <div class="card-body">
+                
+                <style>
+                body {
+                    background-image: url('{{ asset('imagens/flower.jpg') }}');
+                    background-repeat: no-repeat;
+                    background-size: 100%; 
+                    background-position:center-bottom;
+                    }
+                </style>
                                                  
                 <!-- apos a pessoa selecionar o botão editar, vai aparecer o segunte formulario (retirado do bootstrap) -->
                 <form action="{{route('user.update', $user->id)}}" method="post"> 

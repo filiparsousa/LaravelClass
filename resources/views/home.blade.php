@@ -1,23 +1,33 @@
 @extends('layouts.app')
-
+ 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
-               
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
+<style>
+  body {
+    background-image: url('{{ asset('imagens/livros.jpg') }}');
+    background-repeat: no-repeat;
+    background-size:100%; 
+    background-position: center;
+    background-attachment: local, scroll;
 
-                    {{ __('You are logged in!') }}
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+
+  }
+
+  h1{
+    text-align: center;
+    margin-top: 20%;
+    color: #333;
+    margin-top: 10%;
+    padding: 2%;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 10px;
+ 
+  }
+
+</style>
+
+
+<h1><b>Bem-vindo à Biblioteca !</b></h1>
+
+   
+ 
 @endsection

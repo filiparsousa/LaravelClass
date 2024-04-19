@@ -5,7 +5,18 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header" style= background-color:lightslategray;>Criar Editoras</div>
+               
+
+                <div class="card-header"><b>Criar Editoras</b></div>
+
+            <style>
+            body {
+                background-image: url('{{ asset('imagens/flower.jpg') }}');
+                background-repeat: no-repeat;
+                background-size: 100%; 
+                background-position:center-bottom;
+                }
+            </style>
              
                 @if (session('msg'))
                         <p class="btn btn-info">
@@ -15,7 +26,7 @@
                             </p>
                         @endif
 
-                <p class="btn btn-outline-primary"><a href="">Lista de todas as Editoras </a></p> 
+                <p class="btn btn-outline-primary"><a href="{{route('editora.index')}}">Lista de todas as Editoras </a></p> 
 
 
                 <div class="card-body">
@@ -35,11 +46,6 @@
                     <div>
                         <label for="morada">Morada</label>
                         <input class="form-control mb-2" type="text" name="morada" id="morada" 
-                        required autofocus>
-                    </div>
-                    <div>
-                        <label for="codPostal">Código Postal</label>
-                        <input class="form-control mb-2" type="text" name="cod_postal" id="cod_postal" 
                         required autofocus>
                     </div>
                     <div>

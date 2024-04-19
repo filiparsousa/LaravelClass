@@ -26,11 +26,14 @@
                 
                 <div class="card-body">
                 <style>
-                        body {background-color:lightslategray;}
-                        label {color: black;}
-                        legend {color: black;}
+                body {
+                    background-image: url('{{ asset('imagens/flower.jpg') }}');
+                    background-repeat: no-repeat;
+                    background-size: 100%; 
+                    background-position:center-bottom;
+                    }
+                </style>
 
-                    </style>
                 <form action="{{route('socio.store')}}" method="post">
                     <!-- adicionar a routa  -->
 

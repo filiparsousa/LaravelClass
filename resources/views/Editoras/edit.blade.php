@@ -9,9 +9,14 @@
 
                 <div class="card-body">
                
-               <style>
-                        body {background-color:lightslategray;}
-                </style>
+            <style>
+            body {
+                background-image: url('{{ asset('imagens/flower.jpg') }}');
+                background-repeat: no-repeat;
+                background-size: 100%; 
+                background-position:center-bottom;
+                }
+            </style>
 
                 <form action="{{route('editora.update', $editora->id)}}" method="post">
                     <!-- adicionar a routa  -->
@@ -22,35 +27,27 @@
                     <!-- Espaço para os campos par adicionar informações -->
                     <legend style=color:black>Preencha todos os campos</legend>
                     <!-- É como se fosse um H1  -->
-                    <div>
-
-                        <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
-                      
-                    </div>
+                  
                     <div>
                         <label for="nome">Nome</label>
-                        <input class="form-control mb-2" type="text" name="nome" id="nome" value="{{ old('nome', $editora->nome) }}" required autofocus>
+                        <input class="form-control mb-2" type="text" name="nome" id="nome" value="{{$editora->nome}}" required autofocus>
                        
                     </div>
                     <div>
                         <label for="morada">Morada</label>
-                        <input class="form-control mb-2" type="text" name="morada" id="morada" value="{{ old('morada', $editora->morada) }}"
-                        required autofocus>
-                    </div>
-                    <div>
-                        <label for="cod_postal">Código Postal</label>
-                        <input class="form-control mb-2" type="text" name="cod_postal" id="cod_postal" value="{{ old('cod_postal', $editora->cod_postal) }}"
+                        <input class="form-control mb-2" type="text" name="morada" id="morada" value="{{ $editora->morada }}"
                         required autofocus>
                     </div>
                    
+                   
                     <div>
                         <label for="telefone">Telefone</label>
-                        <input class="form-control mb-2" type="text" name="telefone" id="telefone" value="{{ old('telefone', $socio->telefone)}}"
-                        required autofocus>
+                        <input class="form-control mb-2" type="text" name="telefone" id="telefone" value="{{ $editora->telefone}}"
+                        required >
                     </div>
                     <div>
                         <label for="contribuinte">Contribuinte</label>
-                        <input class="form-control mb-2" type="text" name="contribuinte" id="contribuinte" value="{{ old('contribuinte', $editora->contribuinte) }}"
+                        <input class="form-control mb-2" type="text" name="contribuinte" id="contribuinte" value="{{ $editora->contribuinte }}"
                         required autofocus>
                     </div>
                  

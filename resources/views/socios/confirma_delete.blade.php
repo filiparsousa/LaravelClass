@@ -7,6 +7,15 @@
             <div class="card">
                 <div class="card-header">{{ __('Confirmar Eliminação do Sócio') }}</div>
 
+                <style>
+            body {
+                background-image: url('{{ asset('imagens/flower.jpg') }}');
+                background-repeat: no-repeat;
+                background-size: 100%; 
+                background-position:center-bottom;
+                }
+            </style>
+
                 <div class="card-body">
                  
                 <p>Confirma a Eliminação deste sócio <strong>{{$id->nome}}</strong>?</p>

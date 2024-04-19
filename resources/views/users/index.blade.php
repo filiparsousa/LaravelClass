@@ -21,9 +21,14 @@
                     </tr>
                     
                     <style>
-                        body {background-color:lightslategray;}
-
+                    body {
+                        background-image: url('{{ asset('imagens/flower.jpg') }}');
+                        background-repeat: no-repeat;
+                        background-size: 100%; 
+                        background-position:center-bottom;
+                        }
                     </style>
+                    
                 </thead>
                     <tr>
                         <td colspan="6">{{$users->links()}}</td> 

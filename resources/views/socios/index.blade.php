@@ -10,7 +10,12 @@
                 <div class="card-body">
                 
                 <style>
-                        body {background-color:lightslategray;}
+                body {
+                    background-image: url('{{ asset('imagens/flower.jpg') }}');
+                    background-repeat: no-repeat;
+                    background-size: 100%; 
+                    background-position:center-bottom;
+                    }
                 </style>
 
                 <table class="table">

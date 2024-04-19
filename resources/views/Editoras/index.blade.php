@@ -5,11 +5,17 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <style>
-                        body {background-color:lightslategray;}
-                </style> 
                 
-                <div class="card-header">Lista de todas as Editoras</div>
+            <style>
+            body {
+                background-image: url('{{ asset('imagens/flower.jpg') }}');
+                background-repeat: no-repeat;
+                background-size: 100%; 
+                background-position:center-bottom;
+                }
+            </style>
+                
+                <div class="card-header"><b>Lista de todas as Editoras</b><a href="{{route('editora.create')}}" ></div>
                 <div class="card-header">Editoras registadas: {{count($editoras)}}</div>
 
                 <div class="card-body">         
