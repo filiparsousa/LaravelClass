@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Lista de Utilizadores') }}</div>
+                <div class="card-header"><b>{{ __('Lista de Utilizadores') }}</b></div>
 
                 <div class="card-body">
                  <!-- <p>Bem vindo <strong>{{Auth::user()->name}}</strong></p> -->
@@ -27,6 +27,7 @@
                         background-size: 100%; 
                         background-position:center-bottom;
                         }
+
                     </style>
                     
                 </thead>

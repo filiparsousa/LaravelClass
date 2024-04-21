@@ -16,6 +16,14 @@
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 
+    <style>
+      body {
+            background-image: url('{{ asset('imagens/wall.jpg') }}');
+            background-repeat: no-repeat;
+            background-size: 100%; 
+            background-position:center-bottom;
+            }
+    </style>
 
 </head>
 
@@ -32,7 +40,7 @@
                 <a class="navbar-brand" href="{{ route ('user.index')}}">  Utilizadores</a>
 
                 <!-- Acrescentar botão para direcionar a pagina para "socios" -->
-                <a class="navbar-brand" href="{{ route ('socio.create')}}">  Socios </a>
+                <a class="navbar-brand" href="{{ route ('socio.create')}}">  Sócios </a>
 
                 <a class="navbar-brand" href="{{ route ('editora.create')}}">  Editoras </a>
 
@@ -40,6 +48,7 @@
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->

@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Criar Socios</div>
+                <div class="card-header"><b>Criar Socios</b></div>
 
                     @if(session('msg'))
                         <p class="btn btn-secondary">
