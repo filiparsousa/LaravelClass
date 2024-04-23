@@ -1,11 +1,25 @@
 @extends('layouts.app')
 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $("#search").on("keyup", function() {
+            var value = $(this).val().toLowerCase();
+            $("tbody tr").filter(function() {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+        });
+    });
+</script>
+
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header"><b>{{ __('Lista de Utilizadores') }}</b></div>
+                <div class="card-header">Utilizadores registados: {{$users->total()}}</div>
+                <input type="text" id="search" class="form-control" placeholder="Procurar...">
 
                 <div class="card-body">
                  <!-- <p>Bem vindo <strong>{{Auth::user()->name}}</strong></p> -->

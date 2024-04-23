@@ -1,5 +1,17 @@
 @extends('layouts.app')
 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $("#search").on("keyup", function() {
+            var value = $(this).val().toLowerCase();
+            $("tbody tr").filter(function() {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+        });
+    });
+</script>
+
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
@@ -16,7 +28,8 @@
             </style>
                 
                 <div class="card-header"><b>Lista de todas as Editoras</b><a href="{{route('editora.create')}}" ></div>
-                <div class="card-header">Editoras registadas: {{count($editoras)}}</div>
+                <div class="card-header">Editoras registadas: {{$editoras->total()}}</div>
+                <input type="text" id="search" class="form-control" placeholder="Procurar...">
 
                 <div class="card-body">         
 

@@ -6,6 +6,8 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">Listagem dos meus Sócios</div>
+                <div class="card-header"> Meus sócios registados:{{ $socios->where('user_id', Auth::user()->id)->count()}}
+            </div>
 
                 <div class="card-body">
 

@@ -7,11 +7,14 @@
             <div class="card">
                 <div class="card-header"><b>Criar Socios</b></div>
 
-                    @if(session('msg'))
-                        <p class="btn btn-secondary">
-                        {{session('msg')}}
-                        </p>
-                     @endif
+
+                <div x-data="{ showMessage: true }" x-show="showMessage" x-init="setTimeout(() => showMessage = false, 3000)">
+                    @if (session('msg'))
+                    <p class="btn btn-info">
+                        {{ session('msg') }}
+                    </p>
+                    @endif
+                </div>
                     <!-- este "if" vai permitir aparecer uma mensagem de sucesso sempre que for subsmetido o registo com sucesso 
                    mensagem escrita no sociocontroller-->
 

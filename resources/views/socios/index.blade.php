@@ -1,4 +1,15 @@
 @extends('layouts.app')
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $("#search").on("keyup", function() {
+            var value = $(this).val().toLowerCase();
+            $("tbody tr").filter(function() {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+        });
+    });
+</script>
 
 @section('content')
 <div class="container">
@@ -6,6 +17,8 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">Listagem de todos os sócios</div>
+                <div class="card-header">Socios registados: {{$socios->total()}}</div>
+                <input type="text" id="search" class="form-control" placeholder="Procurar...">
 
                 <div class="card-body">
                 

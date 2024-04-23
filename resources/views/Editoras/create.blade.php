@@ -18,13 +18,13 @@
                 }
             </style>
              
-                @if (session('msg'))
-                        <p class="btn btn-info">
-                            {{
-                                session('msg')
-                            }}
-                            </p>
-                        @endif
+              <div x-data="{ showMessage: true }" x-show="showMessage" x-init="setTimeout(() => showMessage = false, 3000)">
+                    @if (session('msg'))
+                    <p class="btn btn-info">
+                        {{ session('msg') }}
+                    </p>
+                    @endif
+                </div>
 
                 <p class="btn btn-outline-primary"><a href="{{route('editora.index')}}">Lista de todas as Editoras </a></p> 
 

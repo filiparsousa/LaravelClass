@@ -16,9 +16,9 @@ use Illuminate\Support\Facades\Auth;
 
 
 Route::get('/', [NavigationController::class,'home'])->name ('site.home');
-Route::get('/', [NavigationController::class,'servicos'])->name ('site.servicos');
-Route::get('/', [NavigationController::class,'galeria'])->name ('site.galeria');
-Route::get('/', [NavigationController::class,'contacto'])->name ('site.contacto');
+Route::get('/contacto', [NavigationController::class,'servicos'])->name ('site.servicos');
+Route::get('/galeria', [NavigationController::class,'galeria'])->name ('site.galeria');
+Route::get('/servicos', [NavigationController::class,'contacto'])->name ('site.contacto');
 
 
 
