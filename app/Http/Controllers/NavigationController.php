@@ -19,4 +19,10 @@ class NavigationController extends Controller
 
         return view('site.servicos');
     }
+
+    public function galeria(){
+
+        return view('site.galeria');
+    }
+
 }
