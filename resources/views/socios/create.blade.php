@@ -17,14 +17,6 @@
                 </div>
                     <!-- este "if" vai permitir aparecer uma mensagem de sucesso sempre que for subsmetido o registo com sucesso 
                    mensagem escrita no sociocontroller-->
-
-
-                   <p class="btn btn-outline-primary"><a href="{{route('socio.index')}}">Listar todos os sócios </a></p>
-                   <!-- a rota definida apresenta a pagina com todos os socios -->
-                   <!-- como a rota já esta  criada, é só criar uma view-layouts-socios, uma pasta de index.blade.php -->
-             
-                   <!-- o can('level') restringe o acesso só aos cargos (ex: administrador ve todos os socios, o utilizador só ve os dele -->
-                   <p class="btn btn-outline-primary"><a href="{{route('socios.user', Auth::user()->id)}}">Lista dos meus sócios</a></p>
          
                 
                 <div class="card-body">

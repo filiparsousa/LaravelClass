@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'Biblioteca') }}</title>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
@@ -28,35 +28,36 @@
 </head>
 
 <body>
-      <div  id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-            <div class="container">
 
-<!-- comeca aqui -->
+  <div  id="app">
+    <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+      <div class="container">   
+              
 
-
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<nav class="navbar navbar-expand-lg ">
   <div class="container-fluid">
     <!-- botão superior da pagina que se chama Laravel -->              
-    <a class="navbar-brand" href="{{ route('home') }}">Menu Principal</a>
+    <a class="navbar-brand" href="{{ route('site.home') }}" >Página Principal</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
 
-        <li class="nav-item">
+        <li class="nav-item dropdown">
           <a class="nav-link active" aria-current="page" href="{{ route ('user.index')}}">Utilizadores</a>
         </li>
 
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Socios
+            Sócios
           </a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="{{route('socio.create')}}">Criar Socio</a></li>
             <li><a class="dropdown-item" href="{{route('socio.index')}}">Lista Geral Socios</a></li>
+            @auth
             <li><a class="dropdown-item" href="{{route('socios.user', Auth::user()->id)}}">Minha Lista Socios</a></li>
+            @endauth
           </ul>
         </li>
 
@@ -76,23 +77,7 @@
 </nav>
 
 
-
-
-<!-- acaba aqui -->
-
-
-
-
-            
-                
-
-              
-
-                
-                 
-               
-
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
@@ -148,3 +133,13 @@
     </div>
 </body>
 </html>
+         
+                
+
+              
+
+                
+                 
+               
+
+         

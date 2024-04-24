@@ -26,9 +26,6 @@
                     @endif
                 </div>
 
-                <p class="btn btn-outline-primary"><a href="{{route('editora.index')}}">Lista de todas as Editoras </a></p> 
-
-
                 <div class="card-body">
                 <form action="{{route('editora.store')}}" method="post">
                 @csrf  

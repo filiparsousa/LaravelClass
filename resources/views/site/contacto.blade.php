@@ -24,7 +24,6 @@
 
 {{-- define o início da seção de conteúdo --}}
 @section('content')
- 
     
     <div class="row">
         <h3> Página dos contactos  </h3>
@@ -38,7 +37,7 @@
             <h2>Entre em Contato</h2>
             <p>Caso tenha alguma dúvida ou sugestão, entre em contato conosco através:</p>
             <ul class="list-unstyled">
-              <li><strong>Telefone:</strong> (253) XXXX-XXXX</li>
+              <li><strong>Telefone:</strong> (253) 123456</li>
               <li><strong>Email:</strong> geral@biblioteca.com</li>
               <li><strong>Endereço:</strong> Rua Cesae Digital, 123 - Braga, Portugal</li>
             </ul>
@@ -65,24 +64,5 @@
           </div>
         </div>
       </div>
-      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 @endsection

@@ -21,7 +21,7 @@
   }
 </style>
 
-<h1><b>Bem-vindo à Biblioteca !</b></h1>
+
 
   
 @endsection
